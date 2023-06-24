@@ -104,7 +104,7 @@
 
                 <div class="col-lg-6">
                     <div class="member d-flex align-items-start">
-                        <div class="pic"><img src="assets/img/doctors/doctors-1.jpg" class="img-fluid" alt=""></div>
+                        <div class="pic"><img src="{{ asset('images/doc1.png') }}" class="img-fluid" alt=""></div>
                         <div class="member-info">
                             <h4>Walter White</h4>
                             <span>Chief Medical Officer</span>
@@ -121,7 +121,7 @@
 
                 <div class="col-lg-6 mt-4 mt-lg-0">
                     <div class="member d-flex align-items-start">
-                        <div class="pic"><img src="assets/img/doctors/doctors-2.jpg" class="img-fluid" alt=""></div>
+                        <div class="pic"><img src="{{ asset('images/doc2.png') }}" class="img-fluid" alt=""></div>
                         <div class="member-info">
                             <h4>Sarah Jhonson</h4>
                             <span>Anesthesiologist</span>
@@ -133,7 +133,7 @@
 
                 <div class="col-lg-6 mt-4">
                     <div class="member d-flex align-items-start">
-                        <div class="pic"><img src="assets/img/doctors/doctors-3.jpg" class="img-fluid" alt=""></div>
+                        <div class="pic"><img src="{{ asset('images/doc3.png') }}" class="img-fluid" alt=""></div>
                         <div class="member-info">
                             <h4>William Anderson</h4>
                             <span>Cardiology</span>
@@ -145,7 +145,7 @@
 
                 <div class="col-lg-6 mt-4">
                     <div class="member d-flex align-items-start">
-                        <div class="pic"><img src="assets/img/doctors/doctors-4.jpg" class="img-fluid" alt=""></div>
+                        <div class="pic"><img src="{{ asset('images/doc4.png') }}" class="img-fluid" alt=""></div>
                         <div class="member-info">
                             <h4>Amanda Jepson</h4>
                             <span>Neurosurgeon</span>
@@ -444,7 +444,7 @@
                             <div class="error-message"></div>
                             <div class="sent-message">Your message has been sent. Thank you!</div>
                         </div>
-                        <div class="text-center"><button type="submit">Send Message</button></div>
+                        <div class="text-center mb-5"><button type="submit">Send Message</button></div>
                     </form>
 
                 </div>
