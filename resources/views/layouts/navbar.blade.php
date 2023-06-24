@@ -23,7 +23,7 @@
             <header class="conteiner blog-header py-3">
                 <div class="row flex-nowrap justify-content-between align-items-center">
                     <div class="col-4 pt-1">
-                        <a class="text-muted" href="#">Hot line : +9411-2233-456</a>
+                        <p class="text-muted" href="#">Hot line : +9411-2233-456</p>
                     </div>
                     <div class="col-4 text-center">
                         <img src="{{URL('/images/logo.png')}}" width="30px" height="30px">
