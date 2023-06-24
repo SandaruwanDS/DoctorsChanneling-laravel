@@ -34,10 +34,10 @@
 
 
 <header>
-    <div id="" class="fixed-top">
-        <nav id="navbar" class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top ">
-            <div class="container ">
-                <div class="col-9 ">
+    <div id="" class="fixed-top ">
+        <nav id="navbar" class="navbar mr-5 ml-5 navbar-expand-md navbar-light bg-white shadow-sm fixed-top ">
+            <div class="container-fluid ">
+                <div class="col-10 ">
                     <nav class="navbar order-last order-lg-0 ">
                         <h3>
                             <img src="{{URL('/images/logo.png')}}" width="30px" height="30px">
@@ -49,13 +49,14 @@
                             <li><a class="nav-link scrollto" href="#departments">Departments</a></li>
                             <li><a class="nav-link scrollto" href="#doctors">Doctors</a></li>
                             <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-                            <li><a class="nav-link scrollto" href="#appointment">Make an Appointment</a></li>
+                            <li><a class="nav-link scrollto" href="/create_appointment">Make an Appointment</a></li>
+                            <li><a class="nav-link scrollto" href="/show_appointment/{{Auth::user()->id}}">My Appointments</a></li>
                         </ul>
                         <i class="bi bi-list mobile-nav-toggle"></i>
                     </nav>
 
                 </div>
-                <div class="col-3 ">
+                <div class="col-2 ">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -114,8 +115,8 @@
 
      
   
-        <footer class="footer ">
-            <div class="container text-center mb-5">
+        <footer class="footer mt-5 ">
+            <div class="container text-center  mb-5">
                <p>&copy; 2022-2023 E-CHANNELING, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
             </div>
         </footer>
