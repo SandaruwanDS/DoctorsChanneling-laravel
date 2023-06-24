@@ -4,7 +4,7 @@
 <title>Dashboard</title>
 
 
-<body>
+<body onLoad="initClock()">
 
 
     <div class="container">
@@ -84,17 +84,10 @@
                                     Year-end sale
                                 </a>
                             </li>
-                           
-
-
                         </ul>
                     </div>
                 </nav>
-
             </div>
-
-
-   
 
 
 
@@ -103,28 +96,108 @@
             <div class="col-10">
                 <div class="container-fluid ">
                     <div class="row ">
-                        <div class="col-md-2">
+                        {{-- <div class="col-md-1">
+                        </div> --}}
+                        <div class="col-mb-12 " id="main">
                         </div>
-                        <div class="col-mb-10 " id="main">
-                        </div>
-
                         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4 mt-5 ">
-
-
-
-
                             <div
-                            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom mt-5">
-                            <h2>Appointments</h2>
-                        </div>
-                        <div class="btn-group mr-2">
-                            <a href="/view_appointment" class="btn btn-sm btn-outline-primary">View Appointments</a>
+                                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom mt-5">
+                                <h2>Appointments</h2>
+                            </div>
+                            <div class="btn-group mr-2">
+                                <a href="/view_appointment" class="btn btn-sm btn-outline-primary ">View Appointments</a>
+                            </div>
 
-                        </div>
+                            <div class="container-fluid mt-3">
+                                <div class="row">
+                                        <div class="col-md">
+                                            <!-- Product Views  -->
+                                            <div class="card"
+                                                style="background-color: rgb(80, 68, 246); box-shadow: 0 0px 20px 0 rgba(0,0,0,0.2);">
+                                                <div class="card-body flex items-center gap-4">
+                                                    <div
+                                                        class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary-500 bg-opacity-20 text-primary-500">
+
+                                                    </div>
+                                                    <div class="flex flex-1 flex-col gap-1">
+                                                        <h6 class="text-sm tracking-wide text-slate-500">All Appointments
+                                                        </h6>
+                                                        <div class="flex flex-wrap items-baseline justify-between gap-2">
+                                                            <h2>{{ $total }}</h2>
+                                                            <h5
+                                                                class="flex items-center text-xs font-medium text-success-500">100%</h5>
+                                                        </div>
+                                                    </div>
+                                                    <a href="/generate_report/all" class="btn btn-sm btn-danger">Get Report All Appo</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md">
+                                            <!-- Product Sold  -->
+                                            <div class="card"
+                                                style="background-color: rgb(37, 241, 37); box-shadow: 0 0px 20px 0 rgba(0,0,0,0.2);">
+                                                <div class="card-body flex items-center gap-4">
+                                                    <div
+                                                        class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-success-500 bg-opacity-20 text-success-500">
+                                                        <i class="bx bx-dollar-circle text-3xl"></i>
+                                                    </div>
+                                                    <div class="flex flex-1 flex-col gap-1">
+                                                        <h6 class="text-sm tracking-wide text-slate-500">Confirmed
+                                                            Appointments</h6>
+                                                        <div class="flex flex-wrap items-baseline justify-between gap-2">
+                                                            <h2>{{ $confirmed }}</h2>
+                                                            <h5
+                                                                class="flex items-center text-xs font-medium text-danger-500">{{ number_format($confirmedPercentage, 1) }}%</h5>
+                                                        </div>
+                                                    </div>
+                                                    <a href="/generate_report/confirmed" class="btn btn-sm btn-danger">Get Report Confirmed Appo</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md">
+                                            <!-- Likes  -->
+                                            <div class="card"
+                                                style="background-color: rgb(231, 245, 44); box-shadow: 0 0px 20px 0 rgba(0,0,0,0.2);">
+                                                <div class="card-body flex items-center gap-4">
+                                                    <div
+                                                        class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-warning-500 bg-opacity-20 text-warning-500">
+                                                        <i class="ti ti-thumb-up text-3xl"></i>
+                                                    </div>
+                                                    <div class="flex flex-1 flex-col gap-1">
+                                                        <h6 class="text-sm tracking-wide text-slate-500">Waiting
+                                                            Appointments</h6>
+                                                        <div class="flex flex-wrap items-baseline justify-between gap-2">
+                                                            <h2>{{ $pending }}</h2>
+                                                            <h5
+                                                                class="flex items-center text-xs font-medium text-success-500">
+                                                                {{ number_format($pendingPercentage, 1) }}%</h5>
+                                                        </div>
+                                                    </div>
+                                                    <a href="/generate_report/waiting" class="btn btn-sm btn-danger">Get Report Waiting Appo</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                </div>
+                            </div>
+                    </div>
 
 
-
-
+                                {{-- clock --}}
+                                    <div id="timedate">
+                                        <a id="mon">January</a>
+                                        <a id="d">1</a>,
+                                        <a id="y">0</a><br />
+                                        <a id="h">12</a> :
+                                        <a id="m">00</a>:
+                                        <a id="s">00</a>:
+                                        <a id="mi">000</a>
+                                    </div>
 
                             <div
                                 class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom mt-5">
@@ -141,153 +214,13 @@
                                     </button>
                                 </div>
                             </div>
-
                             <canvas class="my-4" id="myChart" width="900" height="380"></canvas>
 
-
-                          
-
-
-
-
-
-
-
-
-                            {{-- <h2>Section title</h2>
-                            <div class="table-responsive">
-                                <table class="table table-striped table-sm">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Header</th>
-                                            <th>Header</th>
-                                            <th>Header</th>
-                                            <th>Header</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1,001</td>
-                                            <td>Lorem</td>
-                                            <td>ipsum</td>
-                                            <td>dolor</td>
-                                            <td>sit</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1,002</td>
-                                            <td>amet</td>
-                                            <td>consectetur</td>
-                                            <td>adipiscing</td>
-                                            <td>elit</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1,003</td>
-                                            <td>Integer</td>
-                                            <td>nec</td>
-                                            <td>odio</td>
-                                            <td>Praesent</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1,003</td>
-                                            <td>libero</td>
-                                            <td>Sed</td>
-                                            <td>cursus</td>
-                                            <td>ante</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1,004</td>
-                                            <td>dapibus</td>
-                                            <td>diam</td>
-                                            <td>Sed</td>
-                                            <td>nisi</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1,005</td>
-                                            <td>Nulla</td>
-                                            <td>quis</td>
-                                            <td>sem</td>
-                                            <td>at</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1,006</td>
-                                            <td>nibh</td>
-                                            <td>elementum</td>
-                                            <td>imperdiet</td>
-                                            <td>Duis</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1,007</td>
-                                            <td>sagittis</td>
-                                            <td>ipsum</td>
-                                            <td>Praesent</td>
-                                            <td>mauris</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1,008</td>
-                                            <td>Fusce</td>
-                                            <td>nec</td>
-                                            <td>tellus</td>
-                                            <td>sed</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1,009</td>
-                                            <td>augue</td>
-                                            <td>semper</td>
-                                            <td>porta</td>
-                                            <td>Mauris</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1,010</td>
-                                            <td>massa</td>
-                                            <td>Vestibulum</td>
-                                            <td>lacinia</td>
-                                            <td>arcu</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1,011</td>
-                                            <td>eget</td>
-                                            <td>nulla</td>
-                                            <td>Class</td>
-                                            <td>aptent</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1,012</td>
-                                            <td>taciti</td>
-                                            <td>sociosqu</td>
-                                            <td>ad</td>
-                                            <td>litora</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1,013</td>
-                                            <td>torquent</td>
-                                            <td>per</td>
-                                            <td>conubia</td>
-                                            <td>nostra</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1,014</td>
-                                            <td>per</td>
-                                            <td>inceptos</td>
-                                            <td>himenaeos</td>
-                                            <td>Curabitur</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1,015</td>
-                                            <td>sodales</td>
-                                            <td>ligula</td>
-                                            <td>in</td>
-                                            <td>libero</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div> --}}
                         </main>
-
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 
