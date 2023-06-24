@@ -15,6 +15,7 @@ class CreateApposTable extends Migration
     {
         Schema::create('appos', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('name');
             $table->string('email');
             $table->string('phone');
