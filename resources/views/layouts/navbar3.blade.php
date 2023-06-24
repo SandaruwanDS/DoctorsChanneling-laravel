@@ -23,6 +23,9 @@
     <link href="{{ asset('css/stylehome.css') }}" rel="stylesheet">
     <link href="{{ asset('css/sticky-footer.css') }}" rel="stylesheet">
 
+    {{-- link clock css --}}
+    <link href="{{ asset('css/clock.css') }}" rel="stylesheet">
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
@@ -45,7 +48,7 @@
                             <li><a class="nav-link scrollto" href="#departments">Departments</a></li>
                             <li><a class="nav-link scrollto" href="#doctors">Doctors</a></li>
                            
-                            <li><a class="nav-link scrollto" href="#appointment">Show Appointments</a></li>
+                            <li><a class="nav-link scrollto" href="/view_appointment">Show Appointments</a></li>
                         </ul>
                         <i class="bi bi-list mobile-nav-toggle"></i>
                     </nav>
@@ -119,5 +122,6 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 <script src="{{asset('js/jshome.js')}}"></script>
+<script src="{{asset('js/clock.js')}}"></script>
 
 </html>
