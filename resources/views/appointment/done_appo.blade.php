@@ -3,12 +3,7 @@
 
 <section id="appointment" class="appointment section-bg">
     <div class="container mt-5">
-
-
         <div class="section-title mt-5 mb-2">
-
-
-
             <h2>Make an Appointment</h2>
             <p>
                 To schedule an appointment, simply visit our website and select the "Make an Appointment" option from
@@ -16,43 +11,42 @@
                 to see, select a healthcare professional, and choose a date and time that works best for you.
                 We invite you to experience our exceptional care for yourself by using our online booking system to
                 schedule your next appointment.
-
             </p>
         </div>
 
-       
         @if (session('Done'))
-               <div class="alert alert-success text-center" role="alert">
-                {{ session('Done')}}
+        <div class="alert alert-success text-center" role="alert">
+            {{ session('Done')}} &#10004;
         </div>
         @endif
-        
+
+        @if (session('Update'))
+        <div class="alert alert-primary text-center" role="alert">
+            {{ session('Update')}} &#10004;
+        </div>
+        @endif
 
         <div class="text-center mt-5 mb-2">
-            <a href="/home" class="btn btn-warning mr-2"> <<- Back to Home</a> &nbsp; 
+            <a href="/home" class="btn btn-warning mr-2">
+                <<- Back to Home</a> &nbsp; <a href="/show_appointment/{{Auth::user()->id}}"
+                    class="btn btn-primary mr-2"> View my Appointments
+            </a> &nbsp;
             <a href="/create_appointment" class="btn btn-primary"> Make another Appointment ->> </a>
-        
-    </div>
 
+        </div>
 
         <section id="services" class="services">
             <div class="container mt-2">
-
-
-
                 <div class="row">
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="icon-box">
                             <div class="icon"><i class="fas fa-heartbeat"></i></div>
                             <h4><a href="">Appointment Booking</a></h4>
                             <p>
-
                                 E-channeling can offer a simple and user-friendly platform to book medical appointments
                                 online. This service allows patients to easily search and find available slots with
                                 their
                                 preferred doctors, select a time that suits them, and pay for their appointments online.
-
-
                             </p>
                         </div>
                     </div>
@@ -84,26 +78,10 @@
                             </p>
                         </div>
                     </div>
-
                 </div>
-
             </div>
         </section><!-- End Services Section -->
-
-
-
-
-
-
-
-
-
-
-
     </div>
 </section><!-- End Appointment Section -->
-
-
-
 
 @endsection
