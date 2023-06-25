@@ -37,7 +37,7 @@
                         </h3>
                     </div>
                     <div class="card-body">
-                        <table class="table table-dark">
+                        <table class="table ">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -66,15 +66,27 @@
                                     <td>{{$data->message}}</td>
                                     <td>
                                         @if ($data->status == 1)
-                                        <span style="color: rgb(7, 248, 7)">Confirmed</span>
+                                        <span style="color: rgb(18, 136, 0)">Confirmed</span>
                                         @else
-                                        <span style="color: rgb(248, 244, 1)">Waiting...</span>
+                                        <span style="color: rgb(255, 0, 0)">Waiting...</span>
                                         @endif
                                     </td>
+                                    @if($data->status == 0)
                                     <td><a href="/view_appointment_edit_form/{{$data->id}}"
                                             class="btn btn-success">Edit</a></td>
+                                    @else
+                                    <td><a href="/view_appointment_edit_form/{{$data->id}}"
+                                            class="btn btn-primary">Confirmed</a></td>
+                                    @endif
+
+                                    @if($data->status == 0)
                                     <td><a href="/delete_appointment_by_user/{{$data->id}}"
                                             class="btn btn-danger">Delete</a></td>
+                                    @else
+                                    <td><a href="/delete_appointment_by_user/{{$data->id}}"
+                                            class="btn btn-danger">Confirmed</a></td>
+                                    @endif
+                                    
                                 </tr>
                                 @endforeach
                             </tbody>
