@@ -65,7 +65,11 @@
                                     <span style="color: rgb(248, 244, 1)">Waiting...</span> 
                                     @endif   
                                 </td>
+                                @if ($data->status == 0)
                                 <td><a href="/confirm_appointment/{{$data->id}}" class="btn btn-success">Confirm</a></td>
+                                @else
+                                <td><a href="/confirm_appointment/{{$data->id}}" class="btn btn-primary">Confirmed</a></td>
+                                @endif
                                 <td><a href="/delete_appointment/{{$data->id}}" class="btn btn-danger">Delete</a></td>
                             </tr>
                             @endforeach
